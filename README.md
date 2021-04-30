@@ -1,6 +1,24 @@
 # Portfolio
 A portfolio of my work, includes descriptions of both public and private work.
 
+[Python](#python)
+- [Public Projects](#public-projects)
+    - [Utility Scripts](#utility-scripts)    
+    - [Bureau of Labor Statistics](#bureau-of-labor-statistics)
+    - [Federal Reserve Bank of St. Louis](#fred)
+    - [CME DataMine](#cme-datamine)
+- [Private Projects](#private-projects)
+    - [Social Media Data Extraction & Analysis](#social-media-data-extraction-and-analysis)
+
+[Tableau](#tableau)
+- [Demographic Visualization](#demographic-visualization)
+- [Loan Portfolio Analysis](#loan-portfolio-analysis)
+- [NYC Real Estate Market Snapshot](#nyc-real-estate-market-snapshot)
+- [Bank FFIEC Call Reports](#bank-ffiec-call-reports)
+
+[JavaScript and D3](#javascript-and-d3)
+- [Tiny Charts](#tiny-charts)
+
 # Python
 
 ## Public Projects
@@ -31,9 +49,11 @@ The utility scripts provided below are a collection of helper code which is used
 
 ### Bureau of Labor Statistics
 
-`bls.py` contains the logic which I use to extract, transform and load data from the Bureau of Labor Statistics into a SQL database for analysis. 
+`bls.py` contains logic used to extract, transform, and load data from the Bureau of Labor Statistics API into a SQL database for analysis. The script is broken into distinct logical blocks based on the standard ETL workflow, using [Prefect](https://www.prefect.io/) for dataflow automation. Having been built with automation using Prefect in mind, the script can be hosted on a virtual machine or a local host, registered to a Prefect Cloud instance, and triggered remotely. With the script triggered from Prefect Cloud and running on a local machine running Prefect Core, I am able to see the visual flow of the various stages of the script, and provide logging from the script to Prefect Cloud to monitor the status of the script and identify & troubleshoot any points of failure. The script leverages a variety of the above utilities, including `ppy_api` for the BLS API object, `ppy_auth` to retrieve BLS API keys from AWS Secrets Manager, `ppy_box` to store final data output prior to insertion to the SQL database, and `ppy_sql` to create and load data into a SQL database where it can be retrieved for downstream transformation and analysis. As mentioned before, while the script is running, it provides output and logging which can be viewed within Prefect Cloud, to ensure everything is running smoothly. If needed, future iterations on this script could break out the ETL stages into distinct scripts, providing further decoupling or the ability to run on serverless infrastructure on a set schedule, such as AWS Lambda. A sample of the output from the BLS script can be found at the following OneDrive link: [BLS Sample Data](https://1drv.ms/u/s!Ao4Tew9c17Zgg7hO5-FQhKq4bm_hbg?e=LkKf5Z)
 
 ### FRED
+
+`fred.py` contains logic used to extract, transform, and load data from the Federal Reserve Bank of St. Louis API into a SQL database for analysis. The script is broken into distinct logical blocks based on the standard ETL workflow, using [Prefect](https://www.prefect.io/) for dataflow automation. As the script leverages Prefect in the same way as the above `bls.py`, it realizes the same benefits of its power as an automation tool. The script leverages a variety of the above utilities, including `ppy_api` for the FRED API object, `ppy_auth` to retrieve FRED API keys from AWS Secrets Manager, `ppy_box` to store final data output prior to insertion to the SQL database, and `ppy_sql` to create and load data into a SQL database where it can be retrieved for downstream transformation and analysis. As mentioned before, while the script is running, it provides output and logging which can be viewed within Prefect Cloud, to ensure everything is running smoothly. If needed, future iterations on this script could break out the ETL stages into distinct scripts, providing further decoupling or the ability to run on serverless infrastructure on a set schedule, such as AWS Lambda. A sample of the output from the FRED script can be found at the following OneDrive link: [FRED Sample Data](https://1drv.ms/x/s!Ao4Tew9c17Zgg7hPN7L2PsBtDglbiQ?e=ejazLV)
 
 ### CME DataMine
 
@@ -47,7 +67,7 @@ More information on CME DataMine Python interface can be found at the following:
 
 ## Private Projects
 
-### Social Media Data Extraction
+### Social Media Data Extraction and Analysis
 
 I was contracted by a client to extract data from various social media sites, and perform analysis on the data extracted to replace existing, manual Excel-based processes. I redesigned the analytics process for social media metrics to remove manual steps, and provide a more unified analytics pipeline. I acquired social media handles of concern, structured them into a centralized table, and used this single source of social media handles to provide a more structured process to systematically acquire information for parties of concern. I wrote Python scripts to extract data from YouTube, Instagram and Twitch. Data from these platforms is then transfomed and strucutred into files that enable analysis within a Tableau dashboard. I designed the Tableau dashboard collaboratively with the client. I began by mocking up the design of the dashboard as a wireframe, drawing from existing analytical workbooks and materials provided by client. Upon client signoff, I then created the dashboard within Tableau, driven off of the data extracted from the Python-based data pipelines. Code and references to the Tableau analysis for this project is not available due to the private nature of the contract, however the wireframe design which was presented and approved by the client is displayed below. I am actively maintaining this project for the client, and we plan on pursuing a second phase to expand the functionality to include additional social media platforms and extend the analysis produced within Tableau.
 
@@ -83,7 +103,7 @@ As part of my research on the state of the real estate market within New York Ci
 
 ![CBRE](/tableau/nyc_real_estate_market/cbre.png?raw=true "CBRE")
 
-## U.S. Bank FFIEC Call Reports
+## Bank FFIEC Call Reports
 
 Created several views to understand how bank loans and loan losses had trended during the previous financial crisis, in order to inform how they may trend in the future during the resolution of the COVID-19 crisis and the distress it has created in a variety of markets, especially real estate. Data was sourced from an aggregator of the FFIEC Call Reports, quarterly filings by banks in which they report their loan book data. A copy of the analysis in PDF format, beyond the screenshots pictured below, can be found in this repository using the following link: [Bank Analysis](/tableau/bank_analysis/bank_analysis.pdf).
 
@@ -93,11 +113,11 @@ Created several views to understand how bank loans and loan losses had trended d
 
 ![Crisis NPL Snapshot](/tableau/bank_analysis/crisis_npl_snapshot.png?raw=true "Crisis NPL Snapshot")
 
-# JavaScript / D3.js
+# JavaScript and D3
 
 ## Tiny Charts
 
-Tiny Charts is a collection of JavaScript functions, hosted within an [Observable](https://observablehq.com/) Notebook, which allow users to create sparklines and sparkline-like graphics. Graphics can be used inline, in tables or with traditional charts. The library currently includes the following graphic types: line, bar, area, histogram, tick plot, range. The project is under active development, I plan to expand the library with additional graphics to allow the creation of rich text narratives and data driven stories, with a focus on inline presentation of data. The project can be viewed at the following: [Tiny Charts](https://observablehq.com/@hamzaamjad/tiny-charts).
+Tiny Charts is a collection of JavaScript functions, hosted within an [Observable](https://observablehq.com/) Notebook, which allow users to create sparklines and sparkline-like graphics. Graphics are implemented using a combination of JavaScript and the D3.js library. Graphics can be used inline, in tables or with traditional charts. The library currently includes the following graphic types: line, bar, area, histogram, tick plot, range. The project is under active development, I plan to expand the library with additional graphics to allow the creation of rich text narratives and data driven stories, with a focus on inline presentation of data. The project can be viewed at the following: [Tiny Charts](https://observablehq.com/@hamzaamjad/tiny-charts).
 
 Some examples of Tiny Charts in action, beyond the examples displayed in the original notebook, can be found at the following:
 
