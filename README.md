@@ -106,7 +106,7 @@ Upon client signoff, I then created the dashboard within Tableau, driven off of 
 I am actively maintaining this project for the client, and we plan on pursuing a second phase to expand the functionality to include additional social media platforms and extend the analysis produced within Tableau.
 
 <p float="left">
-  <img src="./misc/social_media_dashboard_wireframe.png?raw=true" width="75%">
+  <img src="./misc/social_media_dashboard_wireframe.png?raw=true" width="100%">
 </p>
 
 # Tableau
@@ -124,9 +124,9 @@ Unfortunately, interactivity with descriptive tooltips and the dashboard itself 
 A copy of the analysis in PDF format, beyond the screenshots pictured below, can be found in this repository using the following link: [Demographic Analysis](/tableau/demographic_analysis/demographic_analysis.pdf).
 
 <p float="left">
-  <img src="./tableau/demographic_analysis/us_demographic_snapshot.png?raw=true" width="33%">
-  <img src="./tableau/demographic_analysis/us_financial_snapshot.png?raw=true" width="33%">
-  <img src="./tableau/demographic_analysis/state_demographic_snapshot.png?raw=true" width="33%">
+  <img src="./tableau/demographic_analysis/us_demographic_snapshot.png?raw=true" width="100%">
+  <img src="./tableau/demographic_analysis/us_financial_snapshot.png?raw=true" width="100%">
+  <img src="./tableau/demographic_analysis/state_demographic_snapshot.png?raw=true" width="100%">
 </p>
 
 ## Loan Portfolio Analysis
