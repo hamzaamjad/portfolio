@@ -142,8 +142,8 @@ Users can export cross-filtered views directly to PDF, or retrieve the data itse
 A copy of the analysis in PDF format, beyond the screenshots pictured below, can be found in this repository using the following link: [Loan Portfolio Analysis](/tableau/loan_portfolio_analytics/loan_portfolio_analysis.pdf).
 
 <p float="left">
-  <img src="./tableau/loan_portfolio_analytics/portfolio_overview.png?raw=true" width="49%">
-  <img src="./tableau/loan_portfolio_analytics/delinquency_dashboard.png?raw=true" width="49%">
+  <img src="./tableau/loan_portfolio_analytics/portfolio_overview.png?raw=true" width="100%">
+  <img src="./tableau/loan_portfolio_analytics/delinquency_dashboard.png?raw=true" width="100%">
 </p>
 
 ## NYC Real Estate Market Snapshot
@@ -155,9 +155,9 @@ Trends show that the NYC market has been significantly impacted by the COVID-19 
 A copy of the analysis in PDF format, beyond the screenshots pictured below, can be found in this repository using the following link: [NYC Real Estate Market](/tableau/nyc_real_estate_market/nyc_real_estate_market.pdf).
 
 <p float="left">
-  <img src="./tableau/nyc_real_estate_market/streeteasy.png?raw=true" width="33%">
-  <img src="./tableau/nyc_real_estate_market/rebny.png?raw=true" width="33%">
-  <img src="./tableau/nyc_real_estate_market/cbre.png?raw=true" width="33%">
+  <img src="./tableau/nyc_real_estate_market/streeteasy.png?raw=true" width="100%">
+  <img src="./tableau/nyc_real_estate_market/rebny.png?raw=true" width="100%">
+  <img src="./tableau/nyc_real_estate_market/cbre.png?raw=true" width="100%">
 </p>
 
 ## Bank FFIEC Call Reports
@@ -167,9 +167,9 @@ Created several views to understand how bank loans and loan losses had trended d
 A copy of the analysis in PDF format, beyond the screenshots pictured below, can be found in this repository using the following link: [Bank Analysis](/tableau/bank_analysis/bank_analysis.pdf).
 
 <p float="left">
-  <img src="./tableau/bank_analysis/loans_loan_losses.png?raw=true" width="33%">
-  <img src="./tableau/bank_analysis/all_banks_histogram.png?raw=true" width="33%">
-  <img src="./tableau/bank_analysis/crisis_npl_snapshot.png?raw=true" width="33%">
+  <img src="./tableau/bank_analysis/loans_loan_losses.png?raw=true" width="100%">
+  <img src="./tableau/bank_analysis/all_banks_histogram.png?raw=true" width="100%">
+  <img src="./tableau/bank_analysis/crisis_npl_snapshot.png?raw=true" width="100%">
 </p>
 
 # JavaScript and D3
